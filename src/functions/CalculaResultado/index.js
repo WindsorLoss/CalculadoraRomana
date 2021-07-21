@@ -7,7 +7,6 @@ export function calculaResultado(input) {
 
         if(operadores[i] === '+') sm += numeros[i + 1]
         else sm -= numeros[i + 1]
-
     }
 
     return retornaRomano(sm)
