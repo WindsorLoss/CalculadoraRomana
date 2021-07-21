@@ -21,7 +21,7 @@ export function Calculator() {
 
     function handleEqual(){
         const resultado = calculaResultado(displayValue)
-        setDisplayValue(resultado)
+        setDisplayValue(resultado || '')
 
     }
 
