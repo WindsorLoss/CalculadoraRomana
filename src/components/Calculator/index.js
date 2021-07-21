@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
-import { CalculaResultado } from '../../functions/CalculaResultado'
+import { calculaResultado } from '../../functions/CalculaResultado'
 import { Calculadora, Container } from './styles'
 
 export function Calculator() {
 
     const [displayValue, setDisplayValue] = useState('')
     const [valueStringArr, setValueStringArr] = useState([])
-    const [allElementsArr, setAllElementsArr] = useState([])
 
     function handleButtonPress(value) {
         setDisplayValue(displayValue + value)
@@ -21,16 +20,10 @@ export function Calculator() {
     }
 
     function handleEqual(){
-        setValueStringArr(
-            displayValue.split(' ').filter(e => e !== '+' && e !== '-')
-        )
-        setAllElementsArr(displayValue.split(' '))
-    }
+        const resultado = calculaResultado(displayValue)
+        setDisplayValue(resultado)
 
-    useEffect(() => {
-        console.log(valueStringArr, allElementsArr)
-        console.log(CalculaResultado(valueStringArr))
-    }, [valueStringArr])
+    }
 
     return (
         <Container>
