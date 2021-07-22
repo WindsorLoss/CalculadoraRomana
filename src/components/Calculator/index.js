@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { calculaResultado } from '../../functions/CalculaResultado'
 import { Calculadora, Container, ResultsLog } from './styles'
 
@@ -35,13 +35,16 @@ export function Calculator() {
     }
 
     return (
+            
         <Container>
 
             <Calculadora>
                     <div className='display'>
+                        
                         <p className={displayValue ? '' : 'placeholder'}>
-                            {displayValue || "Digite um valor"}
+                        {displayValue || "Digite um valor"}
                         </p>
+                        
                     </div>
 
                     <div className='wrapper'>
@@ -68,27 +71,30 @@ export function Calculator() {
             <ResultsLog>
 
                 <h1>Histórico</h1>
-                
-                <ul>
 
+                {
+                    logRegister.length === 0 &&
+                    <p>Nenhum histórico disponível</p>
+                }
+
+                <ul>
                     {logRegister.map(item => {
                         return <li key={item.id}>{item.conta} = {item.resultado}</li>
                     })}
-
                 </ul>
                 
                 {
                     logRegister.length > 0 
-                    ?   <div>
+                    &&  <div>
                             <button onClick={clearLog}>
                                 Apagar histórico
                             </button>
-                        </div>
-                    :   <p>Nenhum histórico disponível</p>
+                        </div> 
                 }
 
             </ResultsLog>
 
         </Container>
+
     )
 }

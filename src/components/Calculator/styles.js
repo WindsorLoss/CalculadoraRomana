@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 export const Container = styled.div`
     height: 100vh;
     display: flex;
@@ -42,10 +43,20 @@ export const Calculadora = styled.div`
 
             margin-bottom: 1rem;
             
-            p {
+            p{
+                width: 25rem;
+
                 color: white;
+                background: transparent;
+                border: 0;
+
+                overflow-x: auto;
+                overflow-y: hidden;
+
                 font-size: 3rem;
+                font-family: serif;
                 text-align: center;
+                margin: 0 auto;
 
                 &.placeholder {
                     font-size: 2rem;
@@ -109,6 +120,7 @@ export const Calculadora = styled.div`
 `  
 
 export const ResultsLog = styled.div`
+
     padding: 2rem;
 
     display: flex;
@@ -123,14 +135,20 @@ export const ResultsLog = styled.div`
         margin-bottom: 2rem;
     }
 
+    ul {
+        height: 100%;
+        overflow: auto;
+        padding-left: 0.5rem;
+        margin-bottom: 0.8rem;
+    }
     li {
         font-size: 1.8rem;
         margin-left: 1rem;
     }
 
     div {
-
-        height: 100%;
+        
+        /* height: 100%; */
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -151,6 +169,8 @@ export const ResultsLog = styled.div`
                 filter: brightness(0.8);
             }
         }
+        
+
     }
 
     p {
