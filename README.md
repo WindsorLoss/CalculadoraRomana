@@ -9,4 +9,9 @@ O sistema numérico representado por algarismos romanos originou-se na Roma Anti
 ● D - 500 <br/>
 ● M - 1000 <br/>
 <br/>
-Neste projeto, criarei uma calculadora simples (apenas somar e subtrair) utilizando os algarismos para realizar tais contas.
+
+O objetivo era criar uma calculadora simples (que realiza apenas contas de somar e subtrair) utilizando os algarismos romanos para poder realizar os cálculos.
+
+Neste projeto, fora utilizada a biblioteca 'Styled-components' para realizar a estilização e feito o deploy através da Vercel.
+
+Confira o projeto funcionando em: https://calculadora-romana.vercel.app/
