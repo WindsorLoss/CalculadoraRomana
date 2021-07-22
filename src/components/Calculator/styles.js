@@ -153,6 +153,12 @@ export const ResultsLog = styled.div`
         }
     }
 
+    p {
+        font-size: 1.5rem;
+        text-align: center;
+        filter: brightness(0.60);
+    }
+
     @media (max-width: 860px) {
         border-top-style: solid;
         border-top-color: white;

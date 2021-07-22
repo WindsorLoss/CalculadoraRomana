@@ -78,12 +78,13 @@ export function Calculator() {
                 </ul>
                 
                 {
-                    logRegister.length > 0 &&
-                    <div>
-                        <button onClick={clearLog}>
-                            Apagar histórico
-                        </button>
-                    </div>
+                    logRegister.length > 0 
+                    ?   <div>
+                            <button onClick={clearLog}>
+                                Apagar histórico
+                            </button>
+                        </div>
+                    :   <p>Nenhum histórico disponível</p>
                 }
 
             </ResultsLog>
