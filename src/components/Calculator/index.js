@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { calculaResultado } from '../../functions/CalculaResultado'
-import { Calculadora, Container } from './styles'
+import { Calculadora, Container, ResultsLog } from './styles'
 
 export function Calculator() {
 
     const [displayValue, setDisplayValue] = useState('')
-    const [valueStringArr, setValueStringArr] = useState([])
+    const [logRegister, setLogRegister] = useState([])
 
     function handleButtonPress(value) {
         setDisplayValue(displayValue + value)
@@ -15,12 +15,21 @@ export function Calculator() {
         setDisplayValue('')
     }
 
+    function clearLog() {
+        setLogRegister([])
+    }
+
     function handleOperators(operator){
         setDisplayValue(displayValue + ` ${operator} `)
     }
 
     function handleEqual(){
         const resultado = calculaResultado(displayValue)
+        resultado && setLogRegister([...logRegister, {
+            id: new Date(),
+            conta: displayValue,
+            resultado
+        }])
         setDisplayValue(resultado || '')
 
     }
@@ -55,6 +64,29 @@ export function Calculator() {
                         </div>
                     </div>
             </Calculadora>
+
+            <ResultsLog>
+
+                <h1>Histórico</h1>
+                
+                <ul>
+
+                    {logRegister.map(item => {
+                        return <li key={item.id}>{item.conta} = {item.resultado}</li>
+                    })}
+
+                </ul>
+                
+                {
+                    logRegister.length > 0 &&
+                    <div>
+                        <button onClick={clearLog}>
+                            Apagar histórico
+                        </button>
+                    </div>
+                }
+
+            </ResultsLog>
 
         </Container>
     )

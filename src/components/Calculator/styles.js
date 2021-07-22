@@ -1,8 +1,21 @@
 import styled from 'styled-components'
 
+export const Container = styled.div`
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+
+    @media (max-width: 860px) {
+        flex-direction: column;
+    }
+`
+
 export const Calculadora = styled.div`
-    height: 470px;
-    width: 470px;
+    height: 29.375rem;
+    width: 29.375rem;
     padding: 1rem;
 
     background: var(--calculator-background);
@@ -17,7 +30,7 @@ export const Calculadora = styled.div`
 
         &.display {
             
-            height: 70px;
+            height: 4.375rem;
 
             background: var(--shape-color);
             border-radius: 30px;
@@ -60,8 +73,8 @@ export const Calculadora = styled.div`
             }
         
             button {
-                height: 100px;
-                width: 100px;
+                height: 6.25rem;
+                width: 6.25rem;
                 border-radius: 50px;
             
                 font-size: 2rem;
@@ -79,7 +92,7 @@ export const Calculadora = styled.div`
                 }
     
                 &.bigger {
-                   height: 150px;
+                   height: 9.375rem;
                    margin-left: 0.8rem;
 
                    &:first-child {
@@ -95,9 +108,63 @@ export const Calculadora = styled.div`
 
 `  
 
-export const Container = styled.div`
-    height: 100vh;
+export const ResultsLog = styled.div`
+    padding: 2rem;
+
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    height: 29.375rem;
+    width: 29.375rem;
+
+
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    li {
+        font-size: 1.8rem;
+        margin-left: 1rem;
+    }
+
+    div {
+
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        button {
+
+            height: 2.5rem;
+            padding: 0 1rem;
+            font-size: 1.2rem;
+
+            background: var(--function-buttons);
+            border: 0;
+            border-radius: 30px;
+
+            transition: filter 0.2s;
+
+            &:hover {
+                filter: brightness(0.8);
+            }
+        }
+    }
+
+    @media (max-width: 860px) {
+        border-top-style: solid;
+        border-top-color: white;
+        border-top-width: 3px;
+        margin-top: 2rem;
+    }
+    @media (min-width: 860px) {
+        border-left-style: solid;
+        border-left-color: white;
+        border-left-width: 3px;
+        margin-left: 2rem;
+
+    }
+
 `

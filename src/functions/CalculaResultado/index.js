@@ -1,6 +1,7 @@
 export function calculaResultado(input) {
     const numeros = retornaNumero(input.split(' ').filter(e => e !== '+' && e !== '-')) 
     const operadores = input.split(' ').filter(e => e === '+' || e === '-')
+
     let sm = numeros[0]
 
     for(let i = 0; i < operadores.length; i++) {
@@ -18,7 +19,6 @@ function retornaNumero(valores){
     for(let i = 0; i < valores.length; i++) {
 
         let currentValue = 0
-
         for(let j = 0; j < valores[i].length; j++){
 
             if(valores[i][j] === 'M') {
@@ -30,7 +30,7 @@ function retornaNumero(valores){
                     } else return NaN
 
                 } else if(valores[i][j - 1] === 'C') {
-                    currentValue += 900
+                    currentValue += 900 - 100
                 }
             }
 
@@ -43,7 +43,7 @@ function retornaNumero(valores){
                     } else return NaN
 
                 } else if(valores[i][j - 1] === 'C') {
-                    currentValue += 400
+                    currentValue += 400 - 100
                 }
             }
 
@@ -56,7 +56,7 @@ function retornaNumero(valores){
                     } else return NaN
 
                 } else if(valores[i][j - 1] === 'X') {
-                    currentValue += 90
+                    currentValue += 90 - 10
                 }
             }
 
@@ -69,7 +69,7 @@ function retornaNumero(valores){
                     } else return NaN
 
                 } else if(valores[i][j - 1] === 'X') {
-                    currentValue += 40
+                    currentValue += 40 - 10
                 }
             }
 
@@ -82,7 +82,7 @@ function retornaNumero(valores){
                     } else return NaN
 
                 } else if(valores[i][j - 1] === 'I') {
-                    currentValue += 9
+                    currentValue += 9 - 1
                 }
             }
 
@@ -91,7 +91,7 @@ function retornaNumero(valores){
                 if(valores[i][j - 1] !== 'I' && valores[i][j - 1] !== 'V'){
                     currentValue += 5
                 } else if(valores[i][j - 1] === 'I') {
-                    currentValue += 4
+                    currentValue += 4 - 1
                 }
             }
 
