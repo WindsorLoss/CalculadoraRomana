@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
 
     :root{
-        animation-name: teste2;
+        animation-name: aumentar;
         animation-duration: 0.5s;
         font-size: 16px;
         
@@ -14,18 +14,18 @@ export const GlobalStyle = createGlobalStyle`
 
     }
 
-    @keyframes teste {
+    @keyframes encolher {
         from {font-size: 16px}
         to {font-size: 10px}
     }
-    @keyframes teste2 {
+    @keyframes aumentar {
         from {font-size: 10px}
         to {font-size: 16px}
     }
 
     @media (max-width: 860px) {
         :root{
-            animation-name: teste;
+            animation-name: encolher;
             animation-duration: 0.5s;
             font-size: 10px;
         }
@@ -48,6 +48,14 @@ export const GlobalStyle = createGlobalStyle`
 
     button {
         cursor: pointer;
+
+        &:disabled {
+            cursor: default;
+        }
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
 
 

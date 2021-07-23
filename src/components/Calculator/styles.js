@@ -93,7 +93,7 @@ export const Calculadora = styled.div`
 
                 transition: filter 0.2s;
 
-                &:hover {
+                &:hover:enabled {
                     filter: brightness(0.8);
                 }
     
