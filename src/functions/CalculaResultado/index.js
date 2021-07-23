@@ -16,86 +16,91 @@ export function calculaResultado(input) {
 function retornaNumero(valores){
     let numbers = []
 
+    
     for(let i = 0; i < valores.length; i++) {
-
+        
         let currentValue = 0
+
         for(let j = 0; j < valores[i].length; j++){
+            
+            const itemAtual = valores[i][j]
+            const itemAnterior = valores[i][j - 1]
 
-            if(valores[i][j] === 'M') {
+            if(itemAtual === 'M') {
 
-                if(valores[i][j - 1] !== 'C'){
+                if(itemAnterior !== 'C'){
 
-                    if(valores[i][j - 1] !== 'D' && valores[i][j - 1] !== 'L' && valores[i][j - 1] !== 'X' && valores[i][j - 1] !== 'V' && valores[i][j - 1] !== 'I') {
+                    if(itemAnterior !== 'D' && itemAnterior !== 'L' && itemAnterior !== 'X' && itemAnterior !== 'V' && itemAnterior !== 'I') {
                         currentValue += 1000
                     } else return NaN
 
-                } else if(valores[i][j - 1] === 'C') {
+                } else if(itemAnterior === 'C') {
                     currentValue += 900 - 100
                 }
             }
 
-            if(valores[i][j] === 'D') {
+            if(itemAtual === 'D') {
 
-                if(valores[i][j - 1] !== 'C'){
+                if(itemAnterior !== 'C'){
 
-                    if(valores[i][j - 1] !== 'D' && valores[i][j - 1] !== 'L' && valores[i][j - 1] !== 'X' && valores[i][j - 1] !== 'V' && valores[i][j - 1] !== 'I') {
+                    if(itemAnterior !== 'D' && itemAnterior !== 'L' && itemAnterior !== 'X' && itemAnterior !== 'V' && itemAnterior !== 'I') {
                         currentValue += 500
                     } else return NaN
 
-                } else if(valores[i][j - 1] === 'C') {
+                } else if(itemAnterior === 'C') {
                     currentValue += 400 - 100
                 }
             }
 
-            if(valores[i][j] === 'C') {
+            if(itemAtual === 'C') {
 
-                if(valores[i][j - 1] !== 'X'){
+                if(itemAnterior !== 'X'){
 
-                    if(valores[i][j - 1] !== 'L' && valores[i][j - 1] !== 'V' && valores[i][j - 1] !== 'I') {
+                    if(itemAnterior !== 'L' && itemAnterior !== 'V' && itemAnterior !== 'I') {
                         currentValue += 100
                     } else return NaN
 
-                } else if(valores[i][j - 1] === 'X') {
+                } else if(itemAnterior === 'X') {
                     currentValue += 90 - 10
                 }
             }
 
-            if(valores[i][j] === 'L') {
+            if(itemAtual === 'L') {
 
-                if(valores[i][j - 1] !== 'X'){
+                if(itemAnterior !== 'X'){
 
-                    if(valores[i][j - 1] !== 'L' && valores[i][j - 1] !== 'V' && valores[i][j - 1] !== 'I') {
+                    if(itemAnterior !== 'L' && itemAnterior !== 'V' && itemAnterior !== 'I') {
                         currentValue += 50
                     } else return NaN
 
-                } else if(valores[i][j - 1] === 'X') {
+                } else if(itemAnterior === 'X') {
                     currentValue += 40 - 10
                 }
             }
 
-            if(valores[i][j] === 'X') {
+            if(itemAtual === 'X') {
 
-                if(valores[i][j - 1] !== 'I'){
+                if(itemAnterior !== 'I'){
 
-                    if(valores[i][j - 1] !== 'V') {
+                    if(itemAnterior !== 'V') {
                         currentValue += 10
                     } else return NaN
 
-                } else if(valores[i][j - 1] === 'I') {
+                } else if(itemAnterior === 'I') {
                     currentValue += 9 - 1
                 }
             }
 
-            if(valores[i][j] === 'V') {
+            if(itemAtual === 'V') {
 
-                if(valores[i][j - 1] !== 'I' && valores[i][j - 1] !== 'V'){
+                if(itemAnterior !== 'I' && itemAnterior !== 'V'){
                     currentValue += 5
-                } else if(valores[i][j - 1] === 'I') {
+                } else if(itemAnterior === 'I') {
                     currentValue += 4 - 1
                 }
             }
 
-            if(valores[i][j] === 'I') currentValue += 1
+            if(itemAtual === 'I') currentValue += 1
 
         }
 

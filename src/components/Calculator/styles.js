@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const Container = styled.div`
     height: 100vh;
     display: flex;
@@ -140,6 +139,8 @@ export const ResultsLog = styled.div`
         overflow: auto;
         padding-left: 0.5rem;
         margin-bottom: 0.8rem;
+
+        list-style-type: initial;
     }
     li {
         font-size: 1.8rem;
