@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { calculaResultado } from '../../functions/CalculaResultado'
-import { Calculadora, Container, ResultsLog } from './styles'
+import { ResultsLog } from '../ResultsLog'
+import { Calculadora, Container } from './styles'
 
 export function Calculator() {
 
@@ -68,31 +69,7 @@ export function Calculator() {
                     </div>
             </Calculadora>
 
-            <ResultsLog>
-
-                <h1>Histórico</h1>
-
-                {
-                    logRegister.length === 0 &&
-                    <p>Nenhum histórico disponível</p>
-                }
-
-                <ul>
-                    {logRegister.map(item => {
-                        return <li key={item.id}>{item.conta} = {item.resultado}</li>
-                    })}
-                </ul>
-                
-                {
-                    logRegister.length > 0 
-                    &&  <div>
-                            <button onClick={clearLog}>
-                                Apagar histórico
-                            </button>
-                        </div> 
-                }
-
-            </ResultsLog>
+            <ResultsLog logRegister={logRegister} />
 
         </Container>
 
