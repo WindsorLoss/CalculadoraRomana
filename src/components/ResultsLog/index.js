@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from './styles'
 
-export function ResultsLog({ logRegister }) {
+export function ResultsLog({ logRegister, clearLog }) {
     return (
         <Container>
 

@@ -69,7 +69,7 @@ export function Calculator() {
                     </div>
             </Calculadora>
 
-            <ResultsLog logRegister={logRegister} />
+            <ResultsLog logRegister={logRegister} clearLog={clearLog}/>
 
         </Container>
 
